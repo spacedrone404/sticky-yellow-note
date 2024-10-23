@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pinned yellow sticky note using pure CSS</title>
+    <style>
+      .quote-container {
+        position: relative;
+      }
+
+      .pin {
+        background-color: #aaa;
+        display: block;
+        height: 12px;
+        width: 2px;
+        position: absolute;
+        left: 9%;
+        top: 12px;
+        z-index: 1;
+      }
+
+      .pin:before {
+        background-color: hsla(0, 0%, 0%, 0.1);
+        box-shadow: 0 0 0.25em hsla(0, 0%, 0%, 0.1);
+        content: "";
+        height: 22px;
+        width: 3px;
+        left: 0;
+        position: absolute;
+        top: -11px;
+        transform: rotate(47.5deg);
+        transform-origin: 50% 100%;
+      }
+
+      .pin:after {
+        background-color: red;
+        box-shadow: inset 0 0 0 1px hsla(0, 0%, 0%, 0.1),
+          inset 3px 3px 3px hsla(0, 0%, 100%, 0.07),
+          inset -3px -3px 3px hsla(0, 0%, 0%, 0.07),
+          15px 1px 3px hsla(0, 0%, 0%, 0.09);
+        border-radius: 50%;
+        content: "";
+        height: 12px;
+        left: -5px;
+        position: absolute;
+        top: -10px;
+        width: 12px;
+      }
+
+      .yellow {
+        background: linear-gradient(
+          90deg,
+          rgba(2, 0, 36, 0) 0%,
+          rgba(255, 248, 0, 1) 100%
+        );
+        transform: rotate(1deg);
+      }
+
+      .note {
+        width: 330px;
+        height: 33px;
+        padding: 7px;
+        font-size: 16px;
+        box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.18);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div align="right">
+      <div class="note yellow">
+        <i class="pin"></i>
+        <div class="red-dot"></div>
+        Pinned yellow sticky note using pure CSS
+      </div>
+    </div>
+  </body>
+</html>
